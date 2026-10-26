@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7d9ee">
+<title>Ursinhos Carinhosos 🧸</title>
+<style>
+:root{--pink:#f5b8dc;--pink2:#ffe8f5;--lav:#dcd2ff;--purple:#7558a6;--ink:#493653;--white:#fffaff;--shadow:0 16px 36px #8f6aa326}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 5%,#fff 0,transparent 25%),linear-gradient(145deg,#fff0f8,#eeeaff 55%,#fff7fc);min-height:100vh}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1080px,92%);margin:auto}
+header{padding:20px 0 12px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:clamp(1.1rem,3vw,1.6rem);letter-spacing:-.5px}
+.logo{width:48px;height:48px;border-radius:17px;background:linear-gradient(145deg,#fff,#f7c5e4);display:grid;place-items:center;box-shadow:inset 3px 3px 7px #fff,5px 7px 12px #b886b54d;font-size:27px}
+.pill{background:#ffffffa8;border:1px solid #fff;padding:8px 12px;border-radius:999px;font-size:.8rem}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:35px 0 28px}
+.eyebrow{display:inline-flex;gap:7px;align-items:center;background:#fff9;border:1px solid white;padding:8px 13px;border-radius:999px;font-size:.83rem;font-weight:750}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:.98;letter-spacing:-2.5px;margin:17px 0}
+.gradient{background:linear-gradient(100deg,#d34e9e,#8a70d5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.05rem;line-height:1.7;max-width:540px;color:#6c5a76}
+.hero-art{min-height:270px;display:grid;place-items:center;position:relative;isolation:isolate}
+.cloud{position:absolute;width:80%;height:72%;border-radius:46% 54% 47% 53%;background:linear-gradient(145deg,#fff,#f6d8f0 55%,#dcd3ff);box-shadow:inset 10px 10px 24px #fff,16px 22px 38px #a989c333;transform:rotate(-6deg);z-index:-1}
+.bear{font-size:clamp(7rem,19vw,12rem);filter:drop-shadow(0 15px 9px #8d6a9c30);animation:float 3.5s ease-in-out infinite}
+.heart{position:absolute;font-size:2rem;animation:float 3s ease-in-out infinite}
+.h1{top:12%;left:12%}.h2{right:10%;top:18%;animation-delay:.8s}.h3{bottom:12%;left:19%;animation-delay:1.4s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+nav{display:flex;gap:8px;overflow-x:auto;padding:9px;background:#ffffffa3;border:1px solid #fff;border-radius:20px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:5;backdrop-filter:blur(14px)}
+.tab{flex:1;min-width:max-content;border:0;background:transparent;color:#806d8b;border-radius:14px;padding:12px 15px;font-weight:800;transition:.2s}
+.tab.active{background:linear-gradient(135deg,#f8c6e4,#ded3ff);color:#563b71;box-shadow:inset 2px 2px 5px #fff,0 5px 12px #b99ac52e}
+main{padding:28px 0 50px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:12px 0 20px}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0;letter-spacing:-1px}
+.muted{color:#806f89;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{position:relative;overflow:hidden;border:1px solid #fff;background:linear-gradient(145deg,#fffdfd,#fff0f9 62%,#f0ecff);border-radius:26px;padding:22px;box-shadow:inset 4px 4px 10px #fff,0 14px 28px #9275a51c;display:flex;flex-direction:column;min-height:330px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px) rotateX(1deg);box-shadow:inset 4px 4px 10px #fff,0 20px 34px #9275a52e}
+.card:before{content:"";position:absolute;width:150px;height:150px;right:-60px;top:-60px;border-radius:50%;background:#f3d4f0;opacity:.55}
+.card:nth-child(2){background:linear-gradient(145deg,#fff,#f0edff)}.card:nth-child(2):before{background:#d9d1ff}
+.card:nth-child(3){background:linear-gradient(145deg,#fff,#ffeef3)}.card:nth-child(3):before{background:#ffd4e6}
+.card-top{display:flex;justify-content:space-between;align-items:center;position:relative}
+.number{font-size:.78rem;font-weight:900;color:#8b6d9e;background:#fff9;padding:7px 10px;border-radius:99px}
+.card-emoji{font-size:2.1rem;filter:drop-shadow(0 4px 3px #997ca533)}
+h3{font-size:1.25rem;line-height:1.25;margin:18px 0 10px;position:relative}
+.frequency{display:inline-block;font-size:.79rem;font-weight:800;color:#9b4484;background:#ffe1f2;padding:7px 10px;border-radius:99px;margin-bottom:14px;align-self:flex-start}
+.card p{font-size:.94rem;line-height:1.65;color:#6f6079;margin:0 0 20px}
+.reward{margin-top:auto;background:#ffffffa8;border:1px solid #fff;border-radius:17px;padding:13px;font-size:.9rem;line-height:1.5}
+.reward strong{display:block;margin-bottom:4px;color:#8052a0}
+.select-btn,.primary{border:0;border-radius:15px;padding:13px 16px;background:linear-gradient(135deg,#e99bc9,#b8a5f5);color:#fff;font-weight:900;box-shadow:0 7px 15px #b886c538;margin-top:14px;transition:transform .2s}
+.select-btn:active,.primary:active{transform:scale(.98)}
+.note{margin-top:22px;border:1px solid #fff;background:#ffffff9c;border-radius:20px;padding:16px 18px;line-height:1.6;color:#786a82}
+.panel{display:none;animation:appear .3s ease}.panel.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.future{min-height:280px;border:1px solid #fff;background:linear-gradient(145deg,#fffdfd,#f7efff);border-radius:28px;box-shadow:var(--shadow);padding:35px 24px;text-align:center;display:grid;place-items:center}
+.future .big{font-size:4.5rem}
+.future h3{font-size:1.55rem;margin:12px 0}
+.future p{max-width:470px;margin:0 auto 18px;line-height:1.7;color:#786a82}
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);background:#5c466d;color:white;padding:13px 18px;border-radius:14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:20;max-width:90%;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{text-align:center;padding:20px 0 34px;color:#8a7b92;font-size:.85rem}
+footer .heartline{font-size:1.1rem;margin-bottom:7px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:25px;gap:5px}.hero-art{min-height:210px;grid-row:1}.hero-copy{grid-row:2}.bear{font-size:8rem}.cloud{width:65%;height:80%}.cards{grid-template-columns:1fr}.card{min-height:unset}.section-head{align-items:start;flex-direction:column}.tab{padding:11px 13px}.pill{display:none}}
+@media(min-width:761px) and (max-width:950px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card:last-child{grid-column:span 2}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="top">
+    <div class="brand"><div class="logo">🧸</div><span>Ursinhos <span class="gradient">Carinhosos</span></span></div>
+    <div class="pill">feito com carinho ♡</div>
+  </div>
+</header>
+<section class="wrap hero">
+  <div class="hero-copy">
+    <span class="eyebrow">💗 Um cantinho só de carinho</span>
+    <h1>Pequenos gestos,<br><span class="gradient">carinho infinito.</span></h1>
+    <p>Escolhe a tua forma favorita de receber carinho. Aqui, cada áudio pode virar um abraço, um sorriso e uma memória especial. 🧸</p>
+  </div>
+  <div class="hero-art" aria-label="Ursinho de peluche com corações">
+    <div class="cloud"></div><span class="heart h1">💗</span><span class="heart h2">💜</span><span class="heart h3">✨</span><div class="bear">🧸</div>
+  </div>
+</section>
+<div class="wrap">
+  <nav aria-label="Abas principais">
+    <button class="tab active" data-tab="audios" aria-selected="true">🎧 Áudios</button>
+    <button class="tab" data-tab="abracos" aria-selected="false">🤗 Abraços</button>
+    <button class="tab" data-tab="beijos" aria-selected="false">💋 Beijos</button>
+    <button class="tab" data-tab="atencao" aria-selected="false">💌 Atenção</button>
+  </nav>
+</div>
+<main class="wrap">
+  <section class="panel active" id="audios">
+    <div class="section-head"><div><h2>Os pacotes da voice 🙈</h2><div class="muted">Três maneiras de espalhar carinho através da voz.</div></div><span class="pill">🎀 edição especial</span></div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-top"><span class="number">PACOTE 01</span><span class="card-emoji">🎙️</span></div>
+        <h3>Bobagem diária</h3>
+        <span class="frequency">1 áudio por dia</span>
+        <p>Um áudio por dia falando bobagem — porque até as coisas mais tontas ficam especiais quando vêm de ti.</p>
+        <div class="reward"><strong>🎁 Recompensa carinhosa</strong>Abraço de 5 minutos no próximo encontro.</div>
+        <button class="select-btn" data-package="1" data-name="Bobagem diária">Escolher este pacote ♡</button>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="number">PACOTE 02</span><span class="card-emoji">🎶</span></div>
+        <h3>Serenata sem fronteiras</h3>
+        <span class="frequency">2 áudios por dia</span>
+        <p>Dois áudios por dia a cantar em qualquer língua. Vale cantar bem, desafinar ou inventar a própria música!</p>
+        <div class="reward"><strong>🎁 Recompensas carinhosas</strong>2 abraços por minuto e 20.000 elogios carinhosos.</div>
+        <button class="select-btn" data-package="2" data-name="Serenata sem fronteiras">Escolher este pacote ♡</button>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="number">PACOTE 03</span><span class="card-emoji">♾️</span></div>
+        <h3>Carinho infinito</h3>
+        <span class="frequency">Áudios infinitos diariamente</span>
+        <p>Áudios aleatórios a cantar ou a falar bobagem, sem limite diário. A espontaneidade é a melhor parte!</p>
+        <div class="reward"><strong>🎁 Recompensas infinitas</strong>Levar-me nas costas quando eu quiser, deixar-me apoiar os pés em ti e abraçar-me sempre que eu quiser. ♾️</div>
+        <button class="select-btn" data-package="3" data-name="Carinho infinito">Escolher este pacote ♡</button>
+      </article>
+    </div>
+    <div class="note">💌 <strong>Como funciona:</strong> escolhe um pacote para marcar o teu favorito. Este site é uma página demonstrativa: não envia áudios nem confirma pedidos automaticamente. Os pacotes e as recompensas são combinados entre as pessoas envolvidas.</div>
+  </section>
+  <section class="panel" id="abracos">
+    <div class="future"><div><div class="big">🤗</div><h3>Um abraço pode dizer tudo</h3><p>Esta aba está preparada para receber os teus tipos de abraços, surpresas e mensagens especiais. Em breve, vamos dar-lhe vida!</p><button class="primary" data-tab="audios">Voltar aos áudios 🎧</button></div></div>
+  </section>
+  <section class="panel" id="beijos">
+    <div class="future"><div><div class="big">💋</div><h3>Pequenos beijos, grandes sorrisos</h3><p>Este espaço fica reservado para as tuas ideias de beijos, cartões carinhosos e animações interativas.</p><button class="primary" data-tab="audios">Voltar aos áudios 🎧</button></div></div>
+  </section>
+  <section class="panel" id="atencao">
+    <div class="future"><div><div class="big">💌</div><h3>Atenção em cada detalhe</h3><p>Uma aba para mensagens personalizadas, elogios, lembretes fofos e gestos de atenção.</p><button class="primary" data-tab="audios">Voltar aos áudios 🎧</button></div></div>
+  </section>
+</main>
+<footer class="wrap"><div class="heartline">🧸 💗 🧸 💜 🧸</div>Ursinhos Carinhosos · feito com carinho, para partilhar carinho.</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const tabs=[...document.querySelectorAll('[data-tab]')];
+const panels=[...document.querySelectorAll('.panel')];
+function showTab(id){
+  panels.forEach(p=>p.classList.toggle('active',p.id===id));
+  document.querySelectorAll('nav .tab').forEach(b=>{
+    const active=b.dataset.tab===id;
+    b.classList.toggle('active',active);
+    b.setAttribute('aria-selected',String(active));
+  });
+  window.scrollTo({top:document.querySelector('nav').getBoundingClientRect().top+window.scrollY-10,behavior:'smooth'});
+}
+tabs.forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+let toastTimer;
+function notify(message){
+ const toast=document.getElementById('toast');toast.textContent=message;toast.classList.add('show');
+ clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3200);
+}
+document.querySelectorAll('.select-btn').forEach(btn=>btn.addEventListener('click',()=>{
+ const msg='💗 Pacote '+btn.dataset.package+' — '+btn.dataset.name+' — marcado como favorito!';
+ notify(msg);
+ btn.textContent='Escolhido 💗';
+ document.querySelectorAll('.select-btn').forEach(other=>{if(other!==btn)other.textContent='Escolher este pacote ♡'});
+}));
+</script>
+</body>
+</html>
